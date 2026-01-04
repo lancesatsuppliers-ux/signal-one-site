@@ -1,0 +1,259 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* Signal One – Pulsing signal animation */
+@keyframes signal-pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse-slower {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 28s linear infinite;
+}
+
+.animate-spin-reverse-slower {
+  animation: spin-reverse-slower 48s linear infinite;
+}
+/* ===== Gear Wheel Animations ===== */
+
+@keyframes gear-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes gear-spin-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+.animate-gear-spin {
+  animation: gear-spin 36s linear infinite;
+}
+
+.animate-gear-spin-reverse {
+  animation: gear-spin-reverse 54s linear infinite;
+}
+/* ===== Gear Wheel Motion ===== */
+
+@keyframes gear-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-gear-spin {
+  animation: gear-spin 40s linear infinite;
+}
+
+/* ===== Tech Glitch Effects ===== */
+
+@keyframes glitch-scan {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 0.3; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+@keyframes glitch-noise {
+  0% { background-position: 0 0; }
+  100% { background-position: 100px 100px; }
+}
+
+.animate-glitch-scan {
+  animation: glitch-scan 4s linear infinite;
+}
+
+.animate-glitch-noise {
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.03),
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  animation: glitch-noise 0.6s steps(2) infinite;
+}
+/* ===== SVG Gear Rotation ===== */
+@keyframes gear-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-gear-spin {
+  animation: gear-spin 42s linear infinite;
+}
+
+/* ===== Subtle Tech Glitch ===== */
+@keyframes glitch-scan {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.25;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+@keyframes gear-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-gear-spin {
+  animation: gear-spin 40s linear infinite;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+/* ===== HERO VIDEO BLEND MASK ===== */
+.mask-radial {
+  mask-image: radial-gradient(
+    circle at center,
+    rgba(0,0,0,1) 45%,
+    rgba(0,0,0,0.6) 60%,
+    rgba(0,0,0,0) 75%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle at center,
+    rgba(0,0,0,1) 45%,
+    rgba(0,0,0,0.6) 60%,
+    rgba(0,0,0,0) 75%
+  );
+}
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 28s linear infinite;
+}
+@keyframes signal-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(14,165,233,0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(14,165,233,0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(14,165,233,0);
+  }
+}
+
+.signal-hover {
+  position: relative;
+}
+
+.signal-hover::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 9999px;
+  opacity: 0;
+}
+
+.signal-hover:hover::after {
+  opacity: 1;
+  animation: signal-pulse 1.4s ease-out infinite;
+}
+@keyframes signal-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(14,165,233,0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(14,165,233,0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(14,165,233,0);
+  }
+}
+
+.signal-hover {
+  position: relative;
+}
+
+.signal-hover::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 9999px;
+  opacity: 0;
+}
+
+.signal-hover:hover::after {
+  opacity: 1;
+  animation: signal-pulse 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
