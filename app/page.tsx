@@ -7,9 +7,12 @@ import { useState, useEffect } from "react";
 const sectionMotion = {
   initial: { opacity: 0, y: 40 },
   whileInView: { opacity: 1, y: 0 },
-  transition: { duration: 0.8, ease: "easeOut" },
-  viewport: { once: true },
+  transition: {
+    duration: 0.8,
+    ease: [0.16, 1, 0.3, 1], // 
+  },
 };
+
 const sectionFlowLeft = {
   initial: { opacity: 0, x: -80 },
   whileInView: { opacity: 1, x: 0 },
@@ -25,7 +28,7 @@ const sectionFlowRight = {
   whileInView: { opacity: 1, x: 0 },
   transition: {
     duration: 0.8,
-    ease: [0.16, 1, 0.3, 1], // easeOut equivalent
+    ease: [0.16, 1, 0.3, 1],
   },
 };
 
@@ -193,18 +196,21 @@ function IndustrySlider() {
  return (
   <div className="relative flex flex-col items-center">
 
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -100 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="max-w-[90rem] w-full mx-4 rounded-3xl overflow-hidden
-           bg-white/6 backdrop-blur-xl
-           border border-white/15"
+     <AnimatePresence mode="wait">
+  <motion.div
+    key={index}
+    initial={{ opacity: 0, x: 100 }}
+    animate={{ opacity: 1, x: 0 }}
+    exit={{ opacity: 0, x: -100 }}
+    transition={{
+      duration: 0.6,
+      ease: [0.16, 1, 0.3, 1], //
+    }}
+    className="max-w-[90rem] w-full mx-4 rounded-3xl overflow-hidden
+      bg-white/6 backdrop-blur-xl
+      border border-white/15"
+  >
 
-        >
           {/* IMAGE */}
           <div className="relative h-[420px] w-full overflow-hidden">
 
@@ -438,9 +444,13 @@ export default function Home() {
   id="what-we-deliver"
   initial={{ opacity: 0, x: -80 }}
   whileInView={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.9, ease: "easeOut" }}
+  transition={{
+    duration: 0.9,
+    ease: [0.16, 1, 0.3, 1], //
+  }}
   className="relative pt-16 pb-32 px-6 overflow-hidden"
 >
+
 
   {/* Background image */}
   <div
