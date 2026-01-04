@@ -11,17 +11,22 @@ const sectionMotion = {
   viewport: { once: true },
 };
 const sectionFlowLeft = {
-  initial: { opacity: 0, x: -60 },
+  initial: { opacity: 0, x: -80 },
   whileInView: { opacity: 1, x: 0 },
-  transition: { duration: 0.8, ease: "easeOut" },
-  viewport: { once: true },
+  transition: {
+    duration: 0.9,
+    ease: [0.16, 1, 0.3, 1], //
+  },
 };
+
 
 const sectionFlowRight = {
   initial: { opacity: 0, x: 60 },
   whileInView: { opacity: 1, x: 0 },
-  transition: { duration: 0.8, ease: "easeOut" },
-  viewport: { once: true },
+  transition: {
+    duration: 0.8,
+    ease: [0.16, 1, 0.3, 1], // easeOut equivalent
+  },
 };
 
 function TechGearWheel() {
