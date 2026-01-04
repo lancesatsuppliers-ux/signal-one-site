@@ -434,9 +434,9 @@ export default function Home() {
   initial={{ opacity: 0, x: -80 }}
   whileInView={{ opacity: 1, x: 0 }}
   transition={{ duration: 0.9, ease: "easeOut" }}
-  viewport={{ once: true }}
   className="relative pt-16 pb-32 px-6 overflow-hidden"
 >
+
   {/* Background image */}
   <div
     className="absolute inset-0 bg-cover bg-center"
