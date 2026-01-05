@@ -326,8 +326,16 @@ export default function Home() {
   className="relative min-h-screen flex items-center justify-center px-6 pt-40 overflow-hidden"
 >
   {/* Background Video */}
- {/* Video temporarily removed for deployment */}
-
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="absolute inset-0 w-full h-full object-cover"
+  >
+    <source src="/videos/hero-background.mp4" type="video/mp4" />
+    <source src="/videos/hero-background.webm" type="video/webm" />
+  </video>
 
   {/* Dark overlay */}
   <div className="absolute inset-0 bg-black/30" />
@@ -381,8 +389,16 @@ export default function Home() {
                bg-black/40
                shadow-[0_0_80px_rgba(0,0,0,0.65)]"
   >
-    {/* Video temporarily removed for deployment */}
-
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="w-full h-full object-cover"
+    >
+      <source src="/videos/hero-panel.mp4" type="video/mp4" />
+      <source src="/videos/hero-panel.webm" type="video/webm" />
+    </video>
   </div>
 </div>
 
@@ -497,25 +513,25 @@ export default function Home() {
         {[
   {
     title: "Communications Systems",
-    image: "/images/what-we-deliver/communications.jpg",
+    image: "/images/What-we-deliver/communications.jpg",
     desc:
       "Secure Push-to-Talk over Cellular systems for real-time coordination, dispatch control, and mission-critical voice operations.",
   },
   {
     title: "IoT & Smart Infrastructure",
-    image: "/images/what-we-deliver/iot.jpg",
+    image: "/images/What-we-deliver/iot.jpg",
     desc:
       "LoRaWAN and cellular IoT systems enabling real-time sensing, monitoring, metering, tracking, and automation.",
   },
   {
     title: "Connectivity & Networks",
-    image: "/images/what-we-deliver/connectivity.jpg",
+    image: "/images/What-we-deliver/connectivity.jpg",
     desc:
       "National and global connectivity combining cellular, IoT SIM, and LoRaWAN networks with redundancy and lifecycle control.",
   },
   {
     title: "Platforms & Control",
-    image: "/images/what-we-deliver/platforms.jpg",
+    image: "/images/What-we-deliver/platforms.jpg",
     desc:
       "Centralised platforms for dispatch, device management, analytics, permissions, APIs, and operational oversight.",
   },
@@ -738,8 +754,16 @@ export default function Home() {
   <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
 
     <div className="relative rounded-3xl overflow-hidden border border-white/25 shadow-[0_0_50px_rgba(14,165,233,0.25)]">
-      {/* Video temporarily removed for deployment */}
-
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="w-full h-full object-cover"
+      >
+        <source src="/videos/reliability.mp4" type="video/mp4" />
+        <source src="/videos/reliability.webm" type="video/webm" />
+      </video>
     </div>
 
     <div className="rounded-3xl bg-white/20 backdrop-blur-xl border border-white/25 p-12">
@@ -771,7 +795,16 @@ export default function Home() {
 
       {/* ================= CORE SERVICES ================= */}
       <motion.section {...sectionMotion} id="services" className="relative py-40 px-6 overflow-hidden">
-       {/* Video temporarily removed for deployment */}
+       <video
+         autoPlay
+         loop
+         muted
+         playsInline
+         className="absolute inset-0 w-full h-full object-cover"
+       >
+         <source src="/videos/core-services-background.mp4" type="video/mp4" />
+         <source src="/videos/core-services-background.webm" type="video/webm" />
+       </video>
 
         <div className="absolute inset-0 bg-[#151A21]/70" />
 
