@@ -331,21 +331,22 @@ export default function Home() {
     loop
     muted
     playsInline
-    className="absolute inset-0 w-full h-full object-cover"
+    preload="auto"
+    className="absolute inset-0 w-full h-full object-cover z-0"
   >
     <source src="/videos/hero-background.mp4" type="video/mp4" />
-    <source src="/videos/hero-background.webm" type="video/webm" />
+    Your browser does not support the video tag.
   </video>
 
   {/* Dark overlay */}
-  <div className="absolute inset-0 bg-black/30" />
+  <div className="absolute inset-0 bg-black/30 z-10" />
 
   {/* Glass Panel */}
   <motion.div
     initial={{ opacity: 0, y: 40 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.8 }}
-    className="relative max-w-[90rem] w-full mx-4 rounded-3xl
+    className="relative z-20 max-w-[90rem] w-full mx-4 rounded-3xl
                bg-white/10 backdrop-blur-xl
                border border-white/20
                shadow-[0_0_80px_rgba(14,165,233,0.35)]
@@ -394,10 +395,11 @@ export default function Home() {
       loop
       muted
       playsInline
+      preload="auto"
       className="w-full h-full object-cover"
     >
       <source src="/videos/hero-panel.mp4" type="video/mp4" />
-      <source src="/videos/hero-panel.webm" type="video/webm" />
+      Your browser does not support the video tag.
     </video>
   </div>
 </div>
@@ -759,10 +761,11 @@ export default function Home() {
         loop
         muted
         playsInline
+        preload="auto"
         className="w-full h-full object-cover"
       >
         <source src="/videos/reliability.mp4" type="video/mp4" />
-        <source src="/videos/reliability.webm" type="video/webm" />
+        Your browser does not support the video tag.
       </video>
     </div>
 
@@ -800,15 +803,16 @@ export default function Home() {
          loop
          muted
          playsInline
-         className="absolute inset-0 w-full h-full object-cover"
+         preload="auto"
+         className="absolute inset-0 w-full h-full object-cover z-0"
        >
          <source src="/videos/core-services-background.mp4" type="video/mp4" />
-         <source src="/videos/core-services-background.webm" type="video/webm" />
+         Your browser does not support the video tag.
        </video>
 
-        <div className="absolute inset-0 bg-[#151A21]/70" />
+        <div className="absolute inset-0 bg-[#151A21]/70 z-10" />
 
-        <div className="relative z-10 max-w-7xl mx-auto">
+        <div className="relative z-20 max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-semibold mb-8">Core Capabilities</h2>
 
           <p className="text-slate-300 max-w-4xl mb-16">
