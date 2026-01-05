@@ -9,7 +9,7 @@ const sectionMotion = {
   whileInView: { opacity: 1, y: 0 },
   transition: {
     duration: 0.8,
-    ease: [0.16, 1, 0.3, 1], // 
+    ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
   },
 };
 
@@ -18,7 +18,7 @@ const sectionFlowLeft = {
   whileInView: { opacity: 1, x: 0 },
   transition: {
     duration: 0.9,
-    ease: [0.16, 1, 0.3, 1], // ✅ valid easing
+    ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
   },
 };
 
@@ -28,7 +28,7 @@ const sectionFlowRight = {
   whileInView: { opacity: 1, x: 0 },
   transition: {
     duration: 0.8,
-    ease: [0.16, 1, 0.3, 1],
+    ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
   },
 };
 
@@ -204,7 +204,7 @@ function IndustrySlider() {
     exit={{ opacity: 0, x: -100 }}
     transition={{
       duration: 0.6,
-      ease: [0.16, 1, 0.3, 1], //
+      ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
     }}
     className="max-w-[90rem] w-full mx-4 rounded-3xl overflow-hidden
       bg-white/6 backdrop-blur-xl
@@ -446,7 +446,7 @@ export default function Home() {
   whileInView={{ opacity: 1, x: 0 }}
   transition={{
     duration: 0.9,
-    ease: [0.16, 1, 0.3, 1], //
+    ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
   }}
   className="relative pt-16 pb-32 px-6 overflow-hidden"
 >
