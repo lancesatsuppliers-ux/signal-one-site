@@ -11,6 +11,7 @@ const sectionMotion = {
     duration: 0.8,
     ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
   },
+  viewport: { once: true },
 };
 
 const sectionFlowLeft = {
@@ -20,6 +21,7 @@ const sectionFlowLeft = {
     duration: 0.9,
     ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
   },
+  viewport: { once: true },
 };
 
 
@@ -30,6 +32,7 @@ const sectionFlowRight = {
     duration: 0.8,
     ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
   },
+  viewport: { once: true },
 };
 
 function TechGearWheel() {
@@ -466,6 +469,7 @@ export default function Home() {
     duration: 0.9,
     ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
   }}
+  viewport={{ once: true }}
   className="relative pt-16 pb-32 px-6 overflow-hidden"
 >
 

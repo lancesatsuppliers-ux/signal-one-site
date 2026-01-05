@@ -28,7 +28,8 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
-/* Signal One – Pulsing signal animation */
+
+/* ===== Signal Pulse Animations ===== */
 @keyframes signal-pulse {
   0% {
     transform: scale(0.9);
@@ -42,6 +43,20 @@ body {
     opacity: 0;
   }
 }
+
+@keyframes signal-pulse-shadow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(14,165,233,0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(14,165,233,0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(14,165,233,0);
+  }
+}
+
+/* ===== Spin Animations ===== */
 @keyframes spin-slow {
   from {
     transform: rotate(0deg);
@@ -67,8 +82,8 @@ body {
 .animate-spin-reverse-slower {
   animation: spin-reverse-slower 48s linear infinite;
 }
-/* ===== Gear Wheel Animations ===== */
 
+/* ===== Gear Wheel Animations ===== */
 @keyframes gear-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
@@ -80,29 +95,26 @@ body {
 }
 
 .animate-gear-spin {
-  animation: gear-spin 36s linear infinite;
+  animation: gear-spin 40s linear infinite;
 }
 
 .animate-gear-spin-reverse {
   animation: gear-spin-reverse 54s linear infinite;
 }
-/* ===== Gear Wheel Motion ===== */
-
-@keyframes gear-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.animate-gear-spin {
-  animation: gear-spin 40s linear infinite;
-}
 
 /* ===== Tech Glitch Effects ===== */
-
 @keyframes glitch-scan {
-  0% { transform: translateY(-100%); opacity: 0; }
-  50% { opacity: 0.3; }
-  100% { transform: translateY(100%); opacity: 0; }
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.25;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
 }
 
 @keyframes glitch-noise {
@@ -125,42 +137,8 @@ body {
     );
   animation: glitch-noise 0.6s steps(2) infinite;
 }
-/* ===== SVG Gear Rotation ===== */
-@keyframes gear-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
-.animate-gear-spin {
-  animation: gear-spin 42s linear infinite;
-}
-
-/* ===== Subtle Tech Glitch ===== */
-@keyframes glitch-scan {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.25;
-  }
-  100% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-}
-@keyframes gear-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.animate-gear-spin {
-  animation: gear-spin 40s linear infinite;
-}
+/* ===== Marquee Animation ===== */
 @keyframes marquee {
   0% {
     transform: translateX(0%);
@@ -173,7 +151,8 @@ body {
 .animate-marquee {
   animation: marquee 30s linear infinite;
 }
-/* ===== HERO VIDEO BLEND MASK ===== */
+
+/* ===== Hero Video Blend Mask ===== */
 .mask-radial {
   mask-image: radial-gradient(
     circle at center,
@@ -188,30 +167,8 @@ body {
     rgba(0,0,0,0) 75%
   );
 }
-@keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
-.animate-spin-slow {
-  animation: spin-slow 28s linear infinite;
-}
-@keyframes signal-pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(14,165,233,0.6);
-  }
-  70% {
-    box-shadow: 0 0 0 12px rgba(14,165,233,0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(14,165,233,0);
-  }
-}
-
+/* ===== Signal Hover Effect ===== */
 .signal-hover {
   position: relative;
 }
@@ -226,34 +183,5 @@ body {
 
 .signal-hover:hover::after {
   opacity: 1;
-  animation: signal-pulse 1.4s ease-out infinite;
+  animation: signal-pulse-shadow 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
-@keyframes signal-pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(14,165,233,0.55);
-  }
-  70% {
-    box-shadow: 0 0 0 12px rgba(14,165,233,0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(14,165,233,0);
-  }
-}
-
-.signal-hover {
-  position: relative;
-}
-
-.signal-hover::after {
-  content: "";
-  position: absolute;
-  inset: -6px;
-  border-radius: 9999px;
-  opacity: 0;
-}
-
-.signal-hover:hover::after {
-  opacity: 1;
-  animation: signal-pulse 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
