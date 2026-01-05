@@ -50,7 +50,7 @@ function TechGearWheel() {
       onClick={() =>
         document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })
       }
-      className="relative w-[420px] h-[420px] mx-auto cursor-pointer group"
+      className="relative w-full max-w-[280px] sm:max-w-[340px] md:max-w-[420px] aspect-square mx-auto cursor-pointer group"
     >
       {/* ===== SVG GEAR ===== */}
       <svg
@@ -259,12 +259,14 @@ function IndustrySlider() {
 }
 
 export default function Home() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <main className="min-h-screen bg-[#151A21] text-slate-100">
 
       {/* ================= HEADER ================= */}
       <header className="fixed top-0 left-0 right-0 z-50">
-        <div className="mx-auto max-w-7xl mt-6 px-10 py-4 rounded-2xl bg-white/15 backdrop-blur-xl border border-white/20 shadow-[0_0_40px_rgba(14,165,233,0.25)] flex items-center justify-between">
+        <div className="mx-auto max-w-7xl mt-3 md:mt-6 px-4 md:px-10 py-3 md:py-4 rounded-xl md:rounded-2xl bg-white/15 backdrop-blur-xl border border-white/20 shadow-[0_0_40px_rgba(14,165,233,0.25)] flex items-center justify-between">
 
           <div className="flex items-center gap-4">
             <div className="relative w-10 h-10 flex items-center justify-center overflow-visible">
@@ -280,15 +282,36 @@ export default function Home() {
             </div>
 
             <div className="leading-tight">
-              <div className="text-2xl font-semibold tracking-wide">
+              <div className="text-lg md:text-2xl font-semibold tracking-wide">
                 SIGNAL <span className="text-[#0EA5E9]">ONE</span>
               </div>
-              <div className="text-[11px] uppercase tracking-[0.35em] text-slate-400">
+              <div className="text-[9px] md:text-[11px] uppercase tracking-[0.35em] text-slate-400">
                 Integrated Systems
               </div>
             </div>
           </div>
 
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="xl:hidden p-2 rounded-lg hover:bg-white/10 transition"
+            aria-label="Toggle menu"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              {mobileMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
+
+          {/* Desktop Navigation */}
           <nav className="hidden xl:flex items-center gap-10 text-sm font-medium">
   <a href="/" className="signal-hover px-3 py-2 rounded-full hover:text-[#0EA5E9] transition">
     Home
@@ -319,14 +342,33 @@ export default function Home() {
   </a>
 </nav>
 
-
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="xl:hidden absolute top-full left-0 right-0 mt-2 mx-4 rounded-2xl bg-white/15 backdrop-blur-xl border border-white/20 shadow-lg"
+          >
+            <nav className="flex flex-col p-4 gap-2">
+              <a href="/" className="px-4 py-3 rounded-lg hover:bg-white/10 hover:text-[#0EA5E9] transition" onClick={() => setMobileMenuOpen(false)}>Home</a>
+              <a href="/systems" className="px-4 py-3 rounded-lg hover:bg-white/10 hover:text-[#0EA5E9] transition" onClick={() => setMobileMenuOpen(false)}>Systems</a>
+              <a href="/solutions" className="px-4 py-3 rounded-lg hover:bg-white/10 hover:text-[#0EA5E9] transition" onClick={() => setMobileMenuOpen(false)}>Solutions</a>
+              <a href="/platforms" className="px-4 py-3 rounded-lg hover:bg-white/10 hover:text-[#0EA5E9] transition" onClick={() => setMobileMenuOpen(false)}>Platforms</a>
+              <a href="/devices" className="px-4 py-3 rounded-lg hover:bg-white/10 hover:text-[#0EA5E9] transition" onClick={() => setMobileMenuOpen(false)}>Devices</a>
+              <a href="/connectivity" className="px-4 py-3 rounded-lg hover:bg-white/10 hover:text-[#0EA5E9] transition" onClick={() => setMobileMenuOpen(false)}>Connectivity</a>
+              <a href="/resellers" className="px-4 py-3 rounded-lg hover:bg-white/10 hover:text-[#0EA5E9] transition" onClick={() => setMobileMenuOpen(false)}>Partner With Us</a>
+            </nav>
+          </motion.div>
+        )}
       </header>
 
       {/* ================= HERO ================= */}
      <section
   id="home"
-  className="relative min-h-screen flex items-center justify-center px-6 pt-40 overflow-hidden"
+  className="relative min-h-screen flex items-center justify-center px-4 md:px-6 pt-24 md:pt-40 overflow-hidden"
 >
   {/* Background Video */}
   <video
@@ -349,37 +391,37 @@ export default function Home() {
     initial={{ opacity: 0, y: 40 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.8 }}
-    className="relative z-20 max-w-[90rem] w-full mx-4 rounded-3xl
+    className="relative z-20 max-w-[90rem] w-full mx-4 rounded-2xl md:rounded-3xl
                bg-white/10 backdrop-blur-xl
                border border-white/20
                shadow-[0_0_80px_rgba(14,165,233,0.35)]
-               p-20"
+               p-6 md:p-12 lg:p-20"
   >
     {/* Content Grid */}
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
       {/* LEFT: Messaging */}
       <div>
-        <h1 className="text-5xl md:text-6xl font-semibold leading-tight mb-8">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-6 md:mb-8">
           Mission-Critical Communications
           <br />
           <span className="text-[#0EA5E9]"> & IoT Systems</span>
         </h1>
 
-        <p className="text-lg text-white/85 max-w-xl mb-10 leading-relaxed">
+        <p className="text-base md:text-lg text-white/85 max-w-xl mb-6 md:mb-10 leading-relaxed">
           Signal One Integrated Systems designs and delivers secure Push-to-Talk,
           IoT connectivity, and operational control platforms for organisations
           operating in high-risk, high-availability environments.
         </p>
 
-        <div className="flex flex-wrap gap-6">
-          <button className="px-10 py-4 rounded-xl bg-[#0EA5E9] hover:bg-[#0284C7] transition
-                             shadow-[0_0_30px_rgba(14,165,233,0.6)]">
+        <div className="flex flex-col sm:flex-row flex-wrap gap-4 md:gap-6">
+          <button className="px-6 md:px-10 py-3 md:py-4 rounded-xl bg-[#0EA5E9] hover:bg-[#0284C7] transition
+                             shadow-[0_0_30px_rgba(14,165,233,0.6)] text-sm md:text-base">
             Request System Design
           </button>
 
-          <button className="px-10 py-4 rounded-xl border border-white/30
-                             hover:bg-white/10 transition">
+          <button className="px-6 md:px-10 py-3 md:py-4 rounded-xl border border-white/30
+                             hover:bg-white/10 transition text-sm md:text-base">
             Talk to an Engineer
           </button>
         </div>
@@ -470,7 +512,7 @@ export default function Home() {
     ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
   }}
   viewport={{ once: true }}
-  className="relative pt-16 pb-32 px-6 overflow-hidden"
+  className="relative pt-12 md:pt-16 pb-20 md:pb-32 px-4 md:px-6 overflow-hidden"
 >
 
 
@@ -494,7 +536,7 @@ export default function Home() {
         bg-white/8 backdrop-blur-2xl
         border border-white/20
         shadow-[0_40px_120px_rgba(0,0,0,0.65)]
-        px-20 py-24
+        px-6 md:px-12 lg:px-20 py-12 md:py-16 lg:py-24
       "
     >
       {/* Subtle glow */}
@@ -503,10 +545,10 @@ export default function Home() {
 
       {/* Section Header */}
       <div className="max-w-3xl mb-20">
-        <h2 className="text-4xl md:text-5xl font-semibold mb-6">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 md:mb-6">
           What We Deliver
         </h2>
-        <p className="text-lg text-white/75 leading-relaxed">
+        <p className="text-base md:text-lg text-white/75 leading-relaxed">
           Signal One Integrated Systems delivers complete, mission-critical
           communications and IoT solutions by integrating devices, connectivity,
           and operational control into a single managed system.
@@ -548,7 +590,7 @@ export default function Home() {
       rounded-2xl
       bg-white/6 backdrop-blur-xl
       border border-white/15
-      p-8
+      p-4 md:p-6 lg:p-8
       transition-all duration-300
       hover:-translate-y-2
       hover:shadow-[0_30px_80px_rgba(0,0,0,0.6)]
@@ -565,12 +607,12 @@ export default function Home() {
     </div>
 
     {/* Title */}
-    <h3 className="text-xl font-semibold mb-4">
+    <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4">
       {item.title}
     </h3>
 
     {/* Description */}
-    <p className="text-white/75 leading-relaxed">
+    <p className="text-sm md:text-base text-white/75 leading-relaxed">
       {item.desc}
     </p>
   </div>
@@ -604,10 +646,10 @@ export default function Home() {
 
     {/* Header */}
     <div className="max-w-4xl mb-24">
-      <h2 className="text-4xl md:text-5xl font-semibold mb-6">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 md:mb-6">
         Integrated Systems, Designed for Reliability
       </h2>
-      <p className="text-lg text-white/75 leading-relaxed">
+      <p className="text-base md:text-lg text-white/75 leading-relaxed">
         Signal One Integrated Systems delivers complete operational systems by
         combining field devices, secure connectivity, and centralised control
         platforms into a single, managed architecture.
@@ -630,14 +672,14 @@ export default function Home() {
   </div>
 
   {/* Content */}
-  <div className="p-10">
-    <span className="text-sm text-[#0EA5E9] font-medium block mb-4">
+  <div className="p-6 md:p-8 lg:p-10">
+    <span className="text-xs md:text-sm text-[#0EA5E9] font-medium block mb-3 md:mb-4">
       Step 1
     </span>
-    <h3 className="text-xl font-semibold mb-4">
+    <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4">
       Field Devices
     </h3>
-    <p className="text-white/75 leading-relaxed">
+    <p className="text-sm md:text-base text-white/75 leading-relaxed">
       Mission-critical devices including Push-to-Talk radios, body cameras,
       sensors, meters, trackers, and gateways deployed in the field.
     </p>
@@ -656,14 +698,14 @@ export default function Home() {
     />
   </div>
 
-  <div className="p-10">
-    <span className="text-sm text-[#0EA5E9] font-medium block mb-4">
+  <div className="p-6 md:p-8 lg:p-10">
+    <span className="text-xs md:text-sm text-[#0EA5E9] font-medium block mb-3 md:mb-4">
       Step 2
     </span>
-    <h3 className="text-xl font-semibold mb-4">
+    <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4">
       Secure Connectivity
     </h3>
-    <p className="text-white/75 leading-relaxed">
+    <p className="text-sm md:text-base text-white/75 leading-relaxed">
       Cellular, IoT SIM, and LoRaWAN connectivity providing reliable,
       redundant data and voice transmission across local and global networks.
     </p>
@@ -681,14 +723,14 @@ export default function Home() {
     />
   </div>
 
-  <div className="p-10">
-    <span className="text-sm text-[#0EA5E9] font-medium block mb-4">
+  <div className="p-6 md:p-8 lg:p-10">
+    <span className="text-xs md:text-sm text-[#0EA5E9] font-medium block mb-3 md:mb-4">
       Step 3
     </span>
-    <h3 className="text-xl font-semibold mb-4">
+    <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4">
       Platforms & Control
     </h3>
-    <p className="text-white/75 leading-relaxed">
+    <p className="text-sm md:text-base text-white/75 leading-relaxed">
       Centralised platforms for dispatch, device management, monitoring,
       analytics, permissions, reporting, and enterprise integration.
     </p>
@@ -706,14 +748,14 @@ export default function Home() {
     />
   </div>
 
-  <div className="p-10">
-    <span className="text-sm text-[#0EA5E9] font-medium block mb-4">
+  <div className="p-6 md:p-8 lg:p-10">
+    <span className="text-xs md:text-sm text-[#0EA5E9] font-medium block mb-3 md:mb-4">
       Step 4
     </span>
-    <h3 className="text-xl font-semibold mb-4">
+    <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4">
       Operational Oversight
     </h3>
-    <p className="text-white/75 leading-relaxed">
+    <p className="text-sm md:text-base text-white/75 leading-relaxed">
       Real-time visibility, governance, alerts, and lifecycle management
       ensuring systems remain secure, scalable, and operational.
     </p>
@@ -756,7 +798,7 @@ export default function Home() {
 </section>
 
 {/* ================= BUILT FOR RELIABILITY ================= */}
-<motion.section {...sectionFlowLeft} className="py-24 px-6">
+<motion.section {...sectionFlowLeft} className="py-12 md:py-16 lg:py-24 px-4 md:px-6">
   <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
 
     <div className="relative rounded-3xl overflow-hidden border border-white/25 shadow-[0_0_50px_rgba(14,165,233,0.25)]">
@@ -773,10 +815,10 @@ export default function Home() {
       </video>
     </div>
 
-    <div className="rounded-3xl bg-white/20 backdrop-blur-xl border border-white/25 p-12">
-      <h2 className="text-3xl font-semibold mb-6">Built for Reliability</h2>
+    <div className="rounded-2xl md:rounded-3xl bg-white/20 backdrop-blur-xl border border-white/25 p-6 md:p-10 lg:p-12">
+      <h2 className="text-2xl md:text-3xl font-semibold mb-4 md:mb-6">Built for Reliability</h2>
 
-      <p className="text-slate-300 mb-4">
+      <p className="text-sm md:text-base text-slate-300 mb-3 md:mb-4">
         Signal One is designed for organisations where communication failure is not an option.
       </p>
 
@@ -801,7 +843,7 @@ export default function Home() {
 
 
       {/* ================= CORE SERVICES ================= */}
-      <motion.section {...sectionMotion} id="services" className="relative py-40 px-6 overflow-hidden">
+      <motion.section {...sectionMotion} id="services" className="relative py-20 md:py-32 lg:py-40 px-4 md:px-6 overflow-hidden">
        <video
          autoPlay
          loop
@@ -817,14 +859,14 @@ export default function Home() {
         <div className="absolute inset-0 bg-[#151A21]/70 z-10" />
 
         <div className="relative z-20 max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-semibold mb-8">Core Capabilities</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 md:mb-8">Core Capabilities</h2>
 
-          <p className="text-slate-300 max-w-4xl mb-16">
+          <p className="text-sm md:text-base text-slate-300 max-w-4xl mb-8 md:mb-16">
             Signal One provides a fully managed communications ecosystem integrating
             voice, data, devices, and operational oversight.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
             {[
               { title: "PoC", img: "/images/poc.jpg" },
               { title: "IoT SIMs", img: "/images/sim.jpg" },
@@ -847,17 +889,17 @@ export default function Home() {
       </motion.section>
 
       {/* ================= SOLUTIONS ================= */}
-      <motion.section {...sectionMotion} id="solutions" className="py-16 px-6 bg-[#151A21]">
+      <motion.section {...sectionMotion} id="solutions" className="py-12 md:py-16 px-4 md:px-6 bg-[#151A21]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-semibold mb-20">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-8 md:mb-12 lg:mb-20">
             Solutions Across Critical Industries
           </h2>
 
-          <p className="text-slate-300 max-w-4xl mb-20">
+          <p className="text-sm md:text-base text-slate-300 max-w-4xl mb-8 md:mb-12 lg:mb-20">
             Supporting regulated, safety-critical, and logistics-intensive environments.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
             {[
               { title: "Security", img: "/images/security.jpg" },
               { title: "Fleet", img: "/images/fleet.jpg" },
@@ -881,17 +923,17 @@ export default function Home() {
 {/* ================= SOLUTION QUALIFICATION ================= */}
 <section
   id="contact"
-  className="relative py-32 px-6 overflow-hidden"
+  className="relative py-16 md:py-24 lg:py-32 px-4 md:px-6 overflow-hidden"
 >
   <div className="max-w-[90rem] mx-auto">
 
-    <div className="grid grid-cols-1 xl:grid-cols-2 gap-20
-                    rounded-3xl border border-white/15
-                    bg-white/5 backdrop-blur-xl p-16">
+    <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 md:gap-12 lg:gap-20
+                    rounded-2xl md:rounded-3xl border border-white/15
+                    bg-white/5 backdrop-blur-xl p-6 md:p-10 lg:p-16">
 
       {/* LEFT: USE CASE SELECTION */}
       <div>
-        <h3 className="text-2xl font-semibold mb-10">
+        <h3 className="text-xl md:text-2xl font-semibold mb-6 md:mb-10">
           Tell us about your use case
         </h3>
 
@@ -965,7 +1007,7 @@ export default function Home() {
 
       {/* RIGHT: CONTACT FORM */}
       <div>
-        <h3 className="text-2xl font-semibold mb-10">
+        <h3 className="text-xl md:text-2xl font-semibold mb-6 md:mb-10">
           Contact details
         </h3>
 
@@ -1008,10 +1050,10 @@ export default function Home() {
   </div>
 </section>
 {/* ================= FOOTER ================= */}
-<footer className="relative bg-[#0F131A] px-6 py-24">
+<footer className="relative bg-[#0F131A] px-4 md:px-6 py-12 md:py-16 lg:py-24">
   <div className="max-w-[90rem] mx-auto">
 
-    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-16">
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-8 md:gap-12 lg:gap-16">
 
       {/* BRAND */}
       <div>
