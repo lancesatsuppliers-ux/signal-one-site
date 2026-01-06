@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { products } from "../data/products";
 
 export default function PlatformsPage() {
@@ -9,44 +10,40 @@ export default function PlatformsPage() {
                     Enterprise-grade operational control, dispatch, and device management platforms.
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {products
-                        .filter((p) => p.category === "platforms")
-                        .map((product) => (
-                            <div
-                                key={product.id}
-                                className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition group"
-                            >
-                                <div className="h-48 w-full bg-black/20 rounded-xl mb-6 overflow-hidden flex items-center justify-center text-white/20">
-                                    {/* Placeholder for real image */}
-                                    <span className="text-sm border border-white/20 px-3 py-1 rounded">{product.imagePlaceholder}</span>
-                                </div>
-                                <h2 className="text-2xl font-semibold mb-3 group-hover:text-[#0EA5E9] transition">
-                                    {product.title}
-                                </h2>
-                                <p className="text-slate-400 mb-6 line-clamp-3">
-                                    {product.description}
-                                </p>
+                <div className="grid md:grid-cols-2 gap-10 mb-20">
+                    <Link href="/platforms/push-to-talk" className="group relative overflow-hidden rounded-3xl bg-white/5 border border-white/10 hover:border-[#0EA5E9]/50 transition-all duration-300">
+                        <div className="h-64 bg-black/20 flex items-center justify-center">
+                            {/* IMAGE PLACEHOLDER: MCPTT Platform Hero | 16:9 | platforms/mcptt-hero.jpg */}
+                            <span className="text-white/20 font-mono text-lg">Critical Connect (MCPTT)</span>
+                        </div>
+                        <div className="p-8">
+                            <h2 className="text-3xl font-semibold text-white mb-4 group-hover:text-[#0EA5E9] transition">Critical Connect</h2>
+                            <p className="text-slate-400 mb-6 text-lg">
+                                Carrier-grade Mission Critical Push-to-Talk (MCPTT) platform. Instant voice, video, and data dispatch for high-availability operations.
+                            </p>
+                            <span className="inline-flex items-center text-[#0EA5E9] font-medium group-hover:translate-x-2 transition">
+                                Explore Platform <span className="ml-2">→</span>
+                            </span>
+                        </div>
+                    </Link>
 
-                                <div className="space-y-2 mb-8">
-                                    {product.specs.slice(0, 3).map(spec => (
-                                        <div key={spec} className="text-sm text-slate-500 flex items-center gap-2">
-                                            <span className="w-1.5 h-1.5 bg-[#0EA5E9] rounded-full"></span>
-                                            {spec}
-                                        </div>
-                                    ))}
-                                </div>
-
-                                <div className="flex flex-wrap gap-2">
-                                    {product.tags.map(tag => (
-                                        <span key={tag} className="text-xs font-medium text-[#0EA5E9] bg-[#0EA5E9]/10 px-2 py-1 rounded">
-                                            {tag}
-                                        </span>
-                                    ))}
-                                </div>
-                            </div>
-                        ))}
+                    <Link href="/platforms/aiot-management" className="group relative overflow-hidden rounded-3xl bg-white/5 border border-white/10 hover:border-[#0EA5E9]/50 transition-all duration-300">
+                        <div className="h-64 bg-black/20 flex items-center justify-center">
+                            {/* IMAGE PLACEHOLDER: AIoT Dashboard Hero | 16:9 | platforms/aiot-dashboard.jpg */}
+                            <span className="text-white/20 font-mono text-lg">AIoT Management</span>
+                        </div>
+                        <div className="p-8">
+                            <h2 className="text-3xl font-semibold text-white mb-4 group-hover:text-[#0EA5E9] transition">AIoT Device Management</h2>
+                            <p className="text-slate-400 mb-6 text-lg">
+                                Unified Mobile Device Management (MDM) and sensor fleet provisioning. Secure, track, and update your entire edge ecosystem.
+                            </p>
+                            <span className="inline-flex items-center text-[#0EA5E9] font-medium group-hover:translate-x-2 transition">
+                                Explore Platform <span className="ml-2">→</span>
+                            </span>
+                        </div>
+                    </Link>
                 </div>
+
             </div>
         </main>
     );
