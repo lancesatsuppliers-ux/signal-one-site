@@ -27,7 +27,7 @@ export default function Header() {
                     <div className="leading-tight">
                         <Link href="/">
                             <div className="text-lg md:text-2xl font-semibold tracking-wide cursor-pointer text-white">
-                                SIGNAL ONE
+                                SIGNAL <span className="text-[#0EA5E9]">ONE</span>
                             </div>
                         </Link>
                         <div className="text-[9px] md:text-[11px] uppercase tracking-[0.35em] text-slate-200">
