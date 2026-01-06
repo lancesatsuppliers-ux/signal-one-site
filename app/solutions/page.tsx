@@ -15,7 +15,7 @@ export default function SolutionsPage() {
                         <Link href="/solutions/security">
                             <h2 className="text-3xl font-semibold mb-4 group-hover:text-[#0EA5E9] transition">Security Operations</h2>
                             <p className="text-slate-400 text-lg mb-6">
-                                End-to-end patrol management and dispatch systems utilising PocStar MCPTT platforms and HKT panic alarms for officer safety.
+                                End-to-end patrol management and dispatch systems utilising Signal One Critical Connect platforms and rapid-response panic alarms for officer safety.
                             </p>
                             <ul className="space-y-2 text-slate-500">
                                 <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-[#0EA5E9] rounded-full"></span> Real-time Video Dispatch</li>
@@ -29,7 +29,7 @@ export default function SolutionsPage() {
                         <Link href="/solutions/utilities">
                             <h2 className="text-3xl font-semibold mb-4 group-hover:text-[#0EA5E9] transition">Smart Utilities</h2>
                             <p className="text-slate-400 text-lg mb-6">
-                                Remote metering and infrastructure monitoring powered by HKT LoRaWAN sensors and YC-Tel global IoT connectivity.
+                                Remote metering and infrastructure monitoring powered by Signal One LoRaWAN sensors and global IoT connectivity.
                             </p>
                             <ul className="space-y-2 text-slate-500">
                                 <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-[#0EA5E9] rounded-full"></span> Automated Meter Reading (AMR)</li>
@@ -57,7 +57,7 @@ export default function SolutionsPage() {
                         <Link href="/solutions/agriculture">
                             <h2 className="text-3xl font-semibold mb-4 group-hover:text-[#0EA5E9] transition">Smart Agriculture</h2>
                             <p className="text-slate-400 text-lg mb-6">
-                                Precision farming and livestock monitoring with ruggedised HKT sensors and long-range connectivity solutions.
+                                Precision farming and livestock monitoring with ruggedised Signal One sensors and long-range connectivity solutions.
                             </p>
                             <ul className="space-y-2 text-slate-500">
                                 <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-[#0EA5E9] rounded-full"></span> Livestock Geo-fencing</li>

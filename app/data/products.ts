@@ -3,20 +3,19 @@ export interface Product {
     title: string;
     description: string;
     category: 'systems' | 'platforms' | 'devices' | 'connectivity' | 'solutions';
-    supplier: 'HKT' | 'PocStar' | 'YC-Tel';
     specs: string[];
     imagePlaceholder: string;
+    imagePath?: string;
     tags: string[];
 }
 
 export const products: Product[] = [
-    // --- CONNECTIVITY (YC-Tel) ---
+    // --- CONNECTIVITY ---
     {
-        id: 'yctel-global-iot-sim',
-        title: 'Global IoT SIM Card',
+        id: 's1-global-connect-sim',
+        title: 'Signal One Global IoT SIM',
         description: 'Enterprise-grade roaming SIM offering multi-network redundancy across 180+ countries. Designed for mission-critical asset tracking and fleet management.',
         category: 'connectivity',
-        supplier: 'YC-Tel',
         specs: [
             'Coverage: 180+ Countries, 680+ Networks',
             'Form Factors: 2FF, 3FF, 4FF, MFF2 (eSIM)',
@@ -24,14 +23,14 @@ export const products: Product[] = [
             'lifecycle Management: Real-time CMP Platform',
         ],
         imagePlaceholder: 'yctel-iot-sim.jpg',
+        imagePath: '/images/products/sim-card.jpg',
         tags: ['IoT', 'Connectivity', 'Global Roaming'],
     },
     {
-        id: 'yctel-esim-platform',
-        title: 'IoT eSIM / eUICC Solution',
+        id: 's1-esim-platform',
+        title: 'Signal One eSIM / eUICC Platform',
         description: 'Remote SIM Provisioning (RSP) compliant eSIM solution allowing over-the-air profile management for massive IoT deployments.',
         category: 'connectivity',
-        supplier: 'YC-Tel',
         specs: [
             'Standard: GSMA SGP.02 / SGP.11',
             'Flexibility: Switch carriers OTA',
@@ -39,16 +38,16 @@ export const products: Product[] = [
             'Integration: API-first management',
         ],
         imagePlaceholder: 'yctel-esim.jpg',
+        imagePath: '/images/products/esim-platform.jpg',
         tags: ['eSIM', 'Remote Provisioning', 'Industrial IoT'],
     },
 
-    // --- PLATFORMS (PocStar) ---
+    // --- PLATFORMS ---
     {
-        id: 'pocstar-mcx-platform',
-        title: 'Mission Critical Push-to-Talk (MCPTT) Platform',
+        id: 's1-mcptt-core',
+        title: 'Signal One Critical Connect (MCPTT)',
         description: 'Carrier-grade communications platform delivering instant voice, video, and data dispatch for public safety and enterprise operations.',
         category: 'platforms',
-        supplier: 'PocStar',
         specs: [
             'Latency: < 300ms call setup',
             'Capacity: 100,000+ concurrent users',
@@ -56,14 +55,14 @@ export const products: Product[] = [
             'Encryption: AES-256 End-to-End',
         ],
         imagePlaceholder: 'pocstar-mcx.jpg',
+        imagePath: '/images/products/mcptt-platform.jpg',
         tags: ['Dispatch', 'MCPTT', 'Software'],
     },
     {
-        id: 'pocstar-mdm-solution',
+        id: 's1-mdm-suite',
         title: 'Unified Device Management (MDM)',
         description: 'Centralised management suite for remote configuration, firmware updates, and security policy enforcement across device fleets.',
         category: 'platforms',
-        supplier: 'PocStar',
         specs: [
             'Control: Remote Kiosk Mode, App Whitelisting',
             'Updates: Batch OTA Firmware Management',
@@ -71,14 +70,14 @@ export const products: Product[] = [
             'Analytics: Device Health Monitoring',
         ],
         imagePlaceholder: 'pocstar-mdm.jpg',
+        imagePath: '/images/products/mdm-platform.jpg',
         tags: ['MDM', 'Device Management', 'Security'],
     },
     {
-        id: 'pocstar-dispatch-console',
-        title: 'Advanced Dispatch Console',
+        id: 's1-dispatch-console',
+        title: 'Command & Control Console',
         description: 'Windows-based visual dispatch console providing map-based command and control for dispatchers managing distributed field teams.',
         category: 'platforms',
-        supplier: 'PocStar',
         specs: [
             'Interface: Multi-screen Map & List View',
             'Recording: Full Voice & Video Logging',
@@ -86,16 +85,16 @@ export const products: Product[] = [
             'Alerts: Instant Emergency Handling',
         ],
         imagePlaceholder: 'pocstar-console.jpg',
+        imagePath: '/images/products/dispatch-console.jpg',
         tags: ['Console', 'Command & Control'],
     },
 
-    // --- DEVICES (HKT) ---
+    // --- DEVICES ---
     {
-        id: 'hkt-gps-cattle-tracker',
-        title: 'Industrial LoRaWAN Livestock Tracker',
+        id: 's1-livestock-tracker',
+        title: 'S1-Agri LoRaWAN Tracker',
         description: 'Ruggedised solar-powered GPS tracker designed for large-scale livestock monitoring and geofencing in rural environments.',
         category: 'devices',
-        supplier: 'HKT',
         specs: [
             'Connectivity: LoRaWAN Class A',
             'Power: Solar + 19000mAh Battery',
@@ -103,14 +102,14 @@ export const products: Product[] = [
             'Sensors: GPS/BDS, Accelerometer',
         ],
         imagePlaceholder: 'hkt-cattle-tracker.jpg',
+        imagePath: '/images/products/cattle-tracker.jpg',
         tags: ['Tracking', 'Agriculture', 'LoRaWAN'],
     },
     {
-        id: 'hkt-smart-smoke-detector',
-        title: 'LoRaWAN Smart Smoke Detector',
+        id: 's1-smoke-detector',
+        title: 'S1-Safety Smart Smoke Detector',
         description: 'Wireless fire safety sensor providing real-time alerts and remote status monitoring for facility management.',
         category: 'devices',
-        supplier: 'HKT',
         specs: [
             'Protocol: LoRaWAN 1.0.3',
             'Sensitivity: Photoelectric Detection',
@@ -118,14 +117,14 @@ export const products: Product[] = [
             'Features: Low Battery Alert, Tamper Alarm',
         ],
         imagePlaceholder: 'hkt-smoke-detector.jpg',
+        imagePath: '/images/products/smoke-detector.jpg',
         tags: ['Safety', 'Building Management', 'Sensors'],
     },
     {
-        id: 'hkt-smart-meter-3phase',
-        title: 'Three-Phase IoT Energy Meter',
+        id: 's1-iot-meter',
+        title: 'S1-Grid IoT Energy Meter',
         description: 'High-precision energy monitoring meter with LoRaWAN uplink for smart grid and industrial power management applications.',
         category: 'devices',
-        supplier: 'HKT',
         specs: [
             'Measurement: Voltage, Current, Power Factor',
             'Class: 1.0 Accuracy',
@@ -133,14 +132,14 @@ export const products: Product[] = [
             'Installation: DIN Rail Mount',
         ],
         imagePlaceholder: 'hkt-energy-meter.jpg',
+        imagePath: '/images/products/smart-meter.jpg',
         tags: ['Metering', 'Utilities', 'Smart Grid'],
     },
     {
-        id: 'hkt-sos-alarm',
-        title: 'One-Touch SOS Panic Button',
+        id: 's1-panic-alarm',
+        title: 'S1-Rescue SOS Button',
         description: 'Wearable or mounted emergency button for lone worker safety and security response, featuring instant LoRaWAN alert transmission.',
         category: 'devices',
-        supplier: 'HKT',
         specs: [
             'Response Time: Instant Uplink',
             'Form Factor: Compact / Lanyard / Wall-mount',
@@ -148,6 +147,7 @@ export const products: Product[] = [
             'Range: up to 15km (Rural)',
         ],
         imagePlaceholder: 'hkt-sos-button.jpg',
+        imagePath: '/images/products/sos-button.jpg',
         tags: ['Safety', 'Security', 'Lone Worker'],
     },
 ];
