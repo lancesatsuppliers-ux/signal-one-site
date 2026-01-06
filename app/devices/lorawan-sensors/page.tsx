@@ -2,7 +2,14 @@ export default function LoRaWANSensorsPage() {
     return (
         <main className="min-h-screen bg-[#151A21] text-slate-100 px-6 py-32">
             <div className="max-w-7xl mx-auto">
-                {/* IMAGE PLACEHOLDER: LoRaWAN Hero Image | 16:9 | devices/lorawan/hero-sensors.jpg */}
+                <div className="relative w-full h-[300px] md:h-[400px] rounded-3xl overflow-hidden mb-16 border border-white/10">
+                    <img
+                        src="/images/devices/lorawan/hero-sensors.jpg"
+                        alt="LoRaWAN Sensors"
+                        className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#151A21] via-transparent to-transparent opacity-80" />
+                </div>
                 <h1 className="text-5xl font-semibold mb-6">LoRaWAN Devices & Sensors</h1>
                 <p className="text-white/70 text-lg max-w-3xl mb-16">
                     A comprehensive portfolio of industrial LoRaWAN sensors designed for long-range, low-power data acquisition. Ruggedised for harsh environments and built for massive scale IoT deployments.
@@ -51,11 +58,17 @@ export default function LoRaWANSensorsPage() {
                                 desc: "Wide-area smoke detection for warehouses and large atriums using beam interruption technology."
                             }
                         ].map((item) => (
-                            <div key={item.model} className="bg-white/5 border border-white/10 p-6 rounded-xl hover:bg-white/10 transition">
+                            <div key={item.model} className="bg-white/5 border border-white/10 p-6 rounded-xl hover:bg-white/10 transition group">
                                 <span className="text-xs font-mono text-[#0EA5E9] block mb-2">{item.model}</span>
+                                <div className="aspect-square w-full mb-4 bg-black/20 rounded-lg overflow-hidden flex items-center justify-center p-4">
+                                    <img
+                                        src={`/images/devices/lorawan/${item.model}.jpg`}
+                                        alt={item.name}
+                                        className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition duration-500"
+                                    />
+                                </div>
                                 <h3 className="text-lg font-semibold mb-3">{item.name}</h3>
                                 <p className="text-sm text-slate-400 mb-4">{item.desc}</p>
-                                {/* IMAGE PLACEHOLDER: {item.name} product shot | 1:1 | devices/lorawan/{item.model}.jpg */}
                             </div>
                         ))}
                     </div>
