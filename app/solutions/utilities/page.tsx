@@ -1,44 +1,29 @@
-export default function UtilitiesPage() {
+export default function UtilitiesSolutionsPage() {
     return (
         <main className="min-h-screen bg-[#151A21] text-slate-100 px-6 py-32">
             <div className="max-w-7xl mx-auto">
-                {/* IMAGE PLACEHOLDER: Hero - Utility infrastructure */}
-                <h1 className="text-5xl font-semibold mb-6">Utility Infrastructure Monitoring</h1>
+                {/* IMAGE PLACEHOLDER: Smart Meter Installation | 16:9 | solutions/utilities-hero.jpg */}
+                <h1 className="text-5xl font-semibold mb-6">Utilities & Smart Metering</h1>
                 <p className="text-white/70 text-lg max-w-3xl mb-16">
-                    Digitise critical infrastructure with scalable IoT sensing layers. Enable remote metering, leak detection, and predictive maintenance for water, gas, and electricity networks.
+                    Modernise grid and water infrastructure with automated metering infrastructure (AMI). Reduce non-revenue water, balance grid loads, and lower operational costs.
                 </p>
 
-                {/* Section: Smart Metering */}
                 <section className="mb-20">
-                    <h2 className="text-3xl font-semibold text-white mb-6">Smart Metering (AMR/AMI)</h2>
-                    <div className="grid md:grid-cols-2 gap-8 items-center">
-                        <div>
-                            <p className="text-slate-400 text-lg mb-6">
-                                Transition from manual reads to Automated Meter Reading. deploy LoRaWAN retrofits on existing meters to collect granular usage data, enabling accurate billing and rapid identification of non-revenue water/energy losses.
-                            </p>
+                    <h2 className="text-3xl font-semibold text-white mb-8">Smart Metering capabilities</h2>
+                    <div className="grid md:grid-cols-3 gap-8">
+                        <div className="bg-white/5 p-6 rounded-xl border border-white/10">
+                            <h3 className="text-xl font-semibold text-white mb-3">Automated Reads</h3>
+                            <p className="text-slate-400 text-sm">Eliminate manual meter reads. Collect hourly consumption data remotely via LoRaWAN.</p>
                         </div>
-                        <div className="bg-white/5 h-64 rounded-xl flex items-center justify-center border border-white/10">
-                            {/* IMAGE PLACEHOLDER: Smart meters */}
-                            <span className="text-white/30 italic">Smart Meter Placeholder</span>
+                        <div className="bg-white/5 p-6 rounded-xl border border-white/10">
+                            <h3 className="text-xl font-semibold text-white mb-3">Leak Detection</h3>
+                            <p className="text-slate-400 text-sm">Identify continuous flow and pressure drops instantly to prevent water loss and damage.</p>
+                        </div>
+                        <div className="bg-white/5 p-6 rounded-xl border border-white/10">
+                            <h3 className="text-xl font-semibold text-white mb-3">Load Profiling</h3>
+                            <p className="text-slate-400 text-sm">Analyse peak usage patterns to optimise grid distribution and prevent outages.</p>
                         </div>
                     </div>
-                </section>
-
-                {/* Section: Remote Monitoring */}
-                <section className="mb-20">
-                    <h2 className="text-3xl font-semibold text-white mb-6">Remote Infrastructure Monitoring</h2>
-                    <p className="text-slate-400 text-lg mb-6 max-w-4xl">
-                        Monitor the health of sub-stations, pipelines, and treatment plants. Industrial sensors provide real-time alerts on pressure, temperature, and equipment status, allowing teams to address faults before they become outages.
-                    </p>
-                    {/* IMAGE PLACEHOLDER: Data dashboards */}
-                </section>
-
-                {/* Section: Operational Efficiency */}
-                <section>
-                    <h2 className="text-3xl font-semibold text-white mb-6">Operational Efficiency</h2>
-                    <p className="text-slate-400 text-lg mb-6 max-w-4xl">
-                        Data-driven insights reduce truck rolls and manual inspections. Optimise maintenance schedules based on actual asset condition rather than fixed time intervals, significantly reducing operational expenditure.
-                    </p>
                 </section>
             </div>
         </main>

@@ -2,52 +2,258 @@ export default function LoRaWANSensorsPage() {
     return (
         <main className="min-h-screen bg-[#151A21] text-slate-100 px-6 py-32">
             <div className="max-w-7xl mx-auto">
-                {/* IMAGE PLACEHOLDER: Hero - Product category hero images */}
+                {/* IMAGE PLACEHOLDER: LoRaWAN Hero Image | 16:9 | devices/lorawan/hero-sensors.jpg */}
                 <h1 className="text-5xl font-semibold mb-6">LoRaWAN Devices & Sensors</h1>
                 <p className="text-white/70 text-lg max-w-3xl mb-16">
                     A comprehensive portfolio of industrial LoRaWAN sensors designed for long-range, low-power data acquisition. Ruggedised for harsh environments and built for massive scale IoT deployments.
                 </p>
 
-                {/* Category: Environmental Monitoring */}
+                {/* --- Environmental & Safety --- */}
                 <section className="mb-20">
-                    <h2 className="text-3xl font-semibold text-white mb-6">Environmental Monitoring</h2>
-                    <div className="grid md:grid-cols-2 gap-8 items-center">
-                        <div>
-                            <p className="text-slate-400 text-lg mb-6">
-                                Monitor air quality, temperature, humidity, and soil conditions in real-time. Our environmental sensors are IP67 rated, ensuring reliable performance in outdoor agriculture, smart cities, and industrial facilities.
-                            </p>
-                        </div>
-                        <div className="bg-white/5 h-64 rounded-xl flex items-center justify-center border border-white/10">
-                            {/* IMAGE PLACEHOLDER: Deployed sensor environments */}
-                            <span className="text-white/30 italic">Environmental Sensor Placeholder</span>
-                        </div>
+                    <h2 className="text-2xl md:text-3xl font-semibold text-white mb-8 border-b border-white/10 pb-4">
+                        Environmental & Safety
+                    </h2>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {[
+                            {
+                                model: "IAQ-1000-H",
+                                name: "High-Precision Indoor Air Quality",
+                                desc: "Advanced monitoring of PM2.5, PM10, CO2, TVOC, Temperature, and Humidity for critical indoor environments."
+                            },
+                            {
+                                model: "IAQ-1000-L",
+                                name: "Standard Indoor Environment Sensor",
+                                desc: "Cost-effective monitoring of core environmental parameters including temperature, humidity, and CO2."
+                            },
+                            {
+                                model: "TH-103",
+                                name: "Industrial Temp & Humidity",
+                                desc: "IP67 ruggedised sensor for harsh industrial and outdoor climate monitoring."
+                            },
+                            {
+                                model: "SD-300",
+                                name: "Smart Smoke Detector",
+                                desc: "Photoelectric smoke detection with LoRaWAN wireless alert transmission for facility safety."
+                            },
+                            {
+                                model: "PIR-100",
+                                name: "Infrared Motion Sensor",
+                                desc: "Passive infrared occupancy and motion detection for security and building automation."
+                            },
+                            {
+                                model: "AVA-1000",
+                                name: "Vibration & Anomaly Sensor",
+                                desc: "Industrial motor and machinery health monitoring using tri-axial vibration analysis."
+                            },
+                            {
+                                model: "OBA-1000",
+                                name: "Optical Beam Smoke Detector",
+                                desc: "Wide-area smoke detection for warehouses and large atriums using beam interruption technology."
+                            }
+                        ].map((item) => (
+                            <div key={item.model} className="bg-white/5 border border-white/10 p-6 rounded-xl hover:bg-white/10 transition">
+                                <span className="text-xs font-mono text-[#0EA5E9] block mb-2">{item.model}</span>
+                                <h3 className="text-lg font-semibold mb-3">{item.name}</h3>
+                                <p className="text-sm text-slate-400 mb-4">{item.desc}</p>
+                                {/* IMAGE PLACEHOLDER: {item.name} product shot | 1:1 | devices/lorawan/{item.model}.jpg */}
+                            </div>
+                        ))}
                     </div>
                 </section>
 
-                {/* Category: Smart Metering */}
+                {/* --- Access & People --- */}
                 <section className="mb-20">
-                    <h2 className="text-3xl font-semibold text-white mb-6">Smart Metering & Energy</h2>
-                    <p className="text-slate-400 text-lg mb-6 max-w-4xl">
-                        Retrofit existing infrastructure with smart LoRaWAN energy meters and pulse counters. Gain granular visibility into electricity, water, and gas consumption to drive efficiency and detect leaks automatically.
-                    </p>
+                    <h2 className="text-2xl md:text-3xl font-semibold text-white mb-8 border-b border-white/10 pb-4">
+                        Access & People
+                    </h2>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {[
+                            {
+                                model: "DS-100",
+                                name: "Door / Window Contact",
+                                desc: "Magnetic contact sensor for detecting open/close status of doors, windows, and cabinets."
+                            },
+                            {
+                                model: "PC-100",
+                                name: "People Counter",
+                                desc: "Bi-directional people counting for foot traffic analysis and occupancy management."
+                            },
+                            {
+                                model: "SDL-100",
+                                name: "Smart Door Lock",
+                                desc: "Remote managed access control lock with LoRaWAN status reporting and command capabilities."
+                            }
+                        ].map((item) => (
+                            <div key={item.model} className="bg-white/5 border border-white/10 p-6 rounded-xl hover:bg-white/10 transition">
+                                <span className="text-xs font-mono text-[#0EA5E9] block mb-2">{item.model}</span>
+                                <h3 className="text-lg font-semibold mb-3">{item.name}</h3>
+                                <p className="text-sm text-slate-400 mb-4">{item.desc}</p>
+                                {/* IMAGE PLACEHOLDER: {item.name} product shot | 1:1 | devices/lorawan/{item.model}.jpg */}
+                            </div>
+                        ))}
+                    </div>
                 </section>
 
-                {/* Category: Asset & Livestock Tracking */}
+                {/* --- Utilities & Infrastructure --- */}
                 <section className="mb-20">
-                    <h2 className="text-3xl font-semibold text-white mb-6">Asset & Livestock Tracking</h2>
-                    <p className="text-slate-400 text-lg mb-6 max-w-4xl">
-                        Track high-value assets and livestock in remote areas without cellular coverage. Our solar-assisted trackers combine GPS/BDS positioning with LoRaWAN backhaul for years of maintenance-free operation.
-                    </p>
-                    {/* IMAGE PLACEHOLDER: Close-up hardware details */}
+                    <h2 className="text-2xl md:text-3xl font-semibold text-white mb-8 border-b border-white/10 pb-4">
+                        Utilities & Infrastructure
+                    </h2>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {[
+                            {
+                                model: "EM-100",
+                                name: "Single-Phase Energy Meter",
+                                desc: "Smart electricity metering for sub-metering and energy management applications."
+                            },
+                            {
+                                model: "EM-300",
+                                name: "Three-Phase Energy Meter",
+                                desc: "Industrial-grade 3-phase power monitoring with high-precision measurement."
+                            },
+                            {
+                                model: "UVC-L100",
+                                name: "Ultrasonic Valve Controller",
+                                desc: "Remote water valve control and flow metering for smart water management."
+                            },
+                            {
+                                model: "SVC-100",
+                                name: "Smart Valve Controller",
+                                desc: "Retrofit valve actuator for automated fluid control in pipes and irrigation."
+                            },
+                            {
+                                model: "UDS-100",
+                                name: "Ultrasonic Distance Sensor",
+                                desc: "Non-contact level measurement for tanks, silos, and waste bins."
+                            }
+                        ].map((item) => (
+                            <div key={item.model} className="bg-white/5 border border-white/10 p-6 rounded-xl hover:bg-white/10 transition">
+                                <span className="text-xs font-mono text-[#0EA5E9] block mb-2">{item.model}</span>
+                                <h3 className="text-lg font-semibold mb-3">{item.name}</h3>
+                                <p className="text-sm text-slate-400 mb-4">{item.desc}</p>
+                                {/* IMAGE PLACEHOLDER: {item.name} product shot | 1:1 | devices/lorawan/{item.model}.jpg */}
+                            </div>
+                        ))}
+                    </div>
                 </section>
 
-                {/* Category: Access Control & Safety */}
+                {/* --- Smart City & Parking --- */}
+                <section className="mb-20">
+                    <h2 className="text-2xl md:text-3xl font-semibold text-white mb-8 border-b border-white/10 pb-4">
+                        Smart City & Parking
+                    </h2>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {[
+                            {
+                                model: "MPS-100",
+                                name: "Magnetic Parking Sensor",
+                                desc: "Surface-mount vehicle detection sensor for on-street parking management."
+                            },
+                            {
+                                model: "EPS-100",
+                                name: "Geomagnetic Parking Sensor",
+                                desc: "Advanced dual-detection parking sensor with radar/magnetic fusion for high accuracy."
+                            }
+                        ].map((item) => (
+                            <div key={item.model} className="bg-white/5 border border-white/10 p-6 rounded-xl hover:bg-white/10 transition">
+                                <span className="text-xs font-mono text-[#0EA5E9] block mb-2">{item.model}</span>
+                                <h3 className="text-lg font-semibold mb-3">{item.name}</h3>
+                                <p className="text-sm text-slate-400 mb-4">{item.desc}</p>
+                                {/* IMAGE PLACEHOLDER: {item.name} product shot | 1:1 | devices/lorawan/{item.model}.jpg */}
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* --- Agriculture & Livestock --- */}
+                <section className="mb-20">
+                    <h2 className="text-2xl md:text-3xl font-semibold text-white mb-8 border-b border-white/10 pb-4">
+                        Agriculture & Livestock
+                    </h2>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {[
+                            {
+                                model: "GAT-100",
+                                name: "GPS Asset Tracker",
+                                desc: "Solar-assisted asset tracker designed for containers, trailers, and heavy equipment."
+                            },
+                            {
+                                model: "RBC-100",
+                                name: "Smart Cattle Collar",
+                                desc: "Livestock tracking collar with GPS positioning and activity monitoring for herd management."
+                            }
+                        ].map((item) => (
+                            <div key={item.model} className="bg-white/5 border border-white/10 p-6 rounded-xl hover:bg-white/10 transition">
+                                <span className="text-xs font-mono text-[#0EA5E9] block mb-2">{item.model}</span>
+                                <h3 className="text-lg font-semibold mb-3">{item.name}</h3>
+                                <p className="text-sm text-slate-400 mb-4">{item.desc}</p>
+                                {/* IMAGE PLACEHOLDER: {item.name} product shot | 1:1 | devices/lorawan/{item.model}.jpg */}
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* --- Wearables --- */}
+                <section className="mb-20">
+                    <h2 className="text-2xl md:text-3xl font-semibold text-white mb-8 border-b border-white/10 pb-4">
+                        Workforce Safety Wearables
+                    </h2>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {[
+                            {
+                                model: "SW-200",
+                                name: "Smart Safety Watch",
+                                desc: "Connected smartwatch providing health monitoring, location tracking, and SOS alerts for workers."
+                            },
+                            {
+                                model: "WB-100",
+                                name: "SOS Wristband",
+                                desc: "Simple, lightweight wristband with panic button and location beacon for lone worker safety."
+                            }
+                        ].map((item) => (
+                            <div key={item.model} className="bg-white/5 border border-white/10 p-6 rounded-xl hover:bg-white/10 transition">
+                                <span className="text-xs font-mono text-[#0EA5E9] block mb-2">{item.model}</span>
+                                <h3 className="text-lg font-semibold mb-3">{item.name}</h3>
+                                <p className="text-sm text-slate-400 mb-4">{item.desc}</p>
+                                {/* IMAGE PLACEHOLDER: {item.name} product shot | 1:1 | devices/lorawan/{item.model}.jpg */}
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* --- Testing & Gateways --- */}
                 <section>
-                    <h2 className="text-3xl font-semibold text-white mb-6">Safety & Access Control</h2>
-                    <p className="text-slate-400 text-lg mb-6 max-w-4xl">
-                        Protect your workforce and facilities with smart door sensors, smoke detectors, and wearable panic buttons. Instant alerts confirm safety status and trigger immediate response protocols.
-                    </p>
+                    <h2 className="text-2xl md:text-3xl font-semibold text-white mb-8 border-b border-white/10 pb-4">
+                        Infrastructure & Testing
+                    </h2>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {[
+                            {
+                                model: "ST-1000",
+                                name: "Network Site Tester",
+                                desc: "Handheld field tester for validating LoRaWAN network coverage and signal quality."
+                            },
+                            {
+                                model: "GW-XD200",
+                                name: "Outdoor Macro Gateway",
+                                desc: "Carrier-grade outdoor IP67 gateway for wide-area city and rural network coverage."
+                            },
+                            {
+                                model: "GW-100PRO",
+                                name: "Enterprise Indoor Gateway",
+                                desc: "High-performance indoor gateway for deep building penetration and campus connectivity."
+                            }
+                        ].map((item) => (
+                            <div key={item.model} className="bg-white/5 border border-white/10 p-6 rounded-xl hover:bg-white/10 transition">
+                                <span className="text-xs font-mono text-[#0EA5E9] block mb-2">{item.model}</span>
+                                <h3 className="text-lg font-semibold mb-3">{item.name}</h3>
+                                <p className="text-sm text-slate-400 mb-4">{item.desc}</p>
+                                {/* IMAGE PLACEHOLDER: {item.name} product shot | 1:1 | devices/lorawan/{item.model}.jpg */}
+                            </div>
+                        ))}
+                    </div>
                 </section>
+
             </div>
         </main>
     );

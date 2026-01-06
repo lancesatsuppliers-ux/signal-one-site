@@ -2,55 +2,70 @@ export default function IoTSIMPage() {
     return (
         <main className="min-h-screen bg-[#151A21] text-slate-100 px-6 py-32">
             <div className="max-w-7xl mx-auto">
-                {/* IMAGE PLACEHOLDER: Hero - Global IoT Connectivity */}
+                {/* IMAGE PLACEHOLDER: SIM Card Hero | 16:9 | connectivity/sim-hero.jpg */}
                 <h1 className="text-5xl font-semibold mb-6">Global IoT Connectivity</h1>
                 <p className="text-white/70 text-lg max-w-3xl mb-16">
-                    Connect your assets anywhere in the world. Signal One provides industrial-grade IoT SIMs with unsteered multi-network roaming across 182+ countries, ensuring maximum uptime and redundancy.
+                    One SIM, global coverage. Our multi-IMSI IoT SIMs provide redundant, carrier-agnostic connectivity across 180+ countries and 600+ networks.
                 </p>
 
-                {/* Section: Multi-Operator Coverage */}
-                <section className="mb-20">
-                    <h2 className="text-3xl font-semibold text-white mb-6">Resilient Multi-Network Coverage</h2>
-                    <div className="grid md:grid-cols-2 gap-8 items-center">
-                        <div className="bg-white/5 h-64 rounded-xl flex items-center justify-center border border-white/10">
-                            {/* IMAGE PLACEHOLDER: World map with coverage */}
-                            <span className="text-white/30 italic">World Map Coverage Placeholder</span>
-                        </div>
-                        <div>
-                            <p className="text-slate-400 text-lg mb-6">
-                                Unlike consumer SIMs that lock to a single carrier, our IoT SIMs automatically latch onto the strongest signal from over 600 roaming partners globally. This eliminates coverage gaps and prevents downtime caused by single-network outages.
-                            </p>
-                        </div>
+                {/* --- Features --- */}
+                <section className="grid lg:grid-cols-2 gap-12 mb-20">
+                    <div>
+                        <h2 className="text-3xl font-semibold text-white mb-6">Why Signal One Connectivity?</h2>
+                        <ul className="space-y-6">
+                            <li>
+                                <h3 className="text-xl font-semibold text-[#0EA5E9] mb-2">Unsteered Roaming</h3>
+                                <p className="text-slate-400">
+                                    Our SIMs automatically connect to the strongest available signal, regardless of the network operator. No steering ensures maximum uptime for mission-critical devices.
+                                </p>
+                            </li>
+                            <li>
+                                <h3 className="text-xl font-semibold text-[#0EA5E9] mb-2">Single Management Plane</h3>
+                                <p className="text-slate-400">
+                                    Manage your entire global fleet from one dashboard. Activate, suspend, and monitor usage in real-time via our Connectivity Management Platform (CMP).
+                                </p>
+                            </li>
+                            <li>
+                                <h3 className="text-xl font-semibold text-[#0EA5E9] mb-2">Secure Private APN</h3>
+                                <p className="text-slate-400">
+                                    Data is routed securely via private APN tunnels directly to your infrastructure or cloud, bypassing the public internet for enhanced security.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="bg-white/5 rounded-2xl border border-white/10 flex items-center justify-center">
+                        {/* IMAGE PLACEHOLDER: CMP Dashboard Screenshot | 4:3 | connectivity/cmp-dashboard.jpg */}
+                        <span className="text-white/20 italic">CMP Platform View</span>
                     </div>
                 </section>
 
-                {/* Section: eSIM & MeshSIM Readiness */}
-                <section className="mb-20">
-                    <h2 className="text-3xl font-semibold text-white mb-6">eSIM & MeshSIM Technology</h2>
-                    <p className="text-slate-400 text-lg mb-6 max-w-4xl">
-                        Future-proof your deployments with eUICC (eSIM) capabilities, allowing Over-the-Air (OTA) profile switching without changing physical cards. We also support advanced MeshSIM technology for decentralised device-to-device connectivity in challenging environments.
-                    </p>
-                    {/* IMAGE PLACEHOLDER: SIM lifecycle diagram */}
-                </section>
-
-                {/* Section: Custom Data Plans */}
-                <section className="mb-20">
-                    <h2 className="text-3xl font-semibold text-white mb-6">Flexible Data & Pooling</h2>
-                    <p className="text-slate-400 text-lg mb-6 max-w-4xl">
-                        We offer tailored data plans to match your specific IoT use case, from low-bandwidth metering (MBs) to high-throughput video streaming (GBs). Aggregate usage across your entire fleet with data pooling to eliminate overage variances.
-                    </p>
-                </section>
-
-                {/* Section: Secure & Reliable Connectivity */}
+                {/* --- Specs --- */}
                 <section>
-                    <h2 className="text-3xl font-semibold text-white mb-6">Security First</h2>
-                    <div className="bg-white/5 p-8 rounded-xl border border-white/10">
-                        {/* IMAGE PLACEHOLDER: Connectivity flow illustration */}
-                        <p className="text-slate-400 text-lg">
-                            Private APN configurations, VPN tunnels, and static IP options allow us to route your device data securely to your backend infrastructure, bypassing the public internet and reducing attack surfaces.
-                        </p>
+                    <h2 className="text-2xl font-semibold text-white mb-8">Technical Specifications</h2>
+                    <div className="overflow-x-auto">
+                        <table className="w-full text-left text-slate-300 border-collapse">
+                            <tbody>
+                                <tr className="border-b border-white/10">
+                                    <td className="py-4 font-semibold w-1/3">Form Factors</td>
+                                    <td className="py-4 text-slate-400">2FF (Mini), 3FF (Micro), 4FF (Nano), MFF2 (eSIM)</td>
+                                </tr>
+                                <tr className="border-b border-white/10">
+                                    <td className="py-4 font-semibold">Network Support</td>
+                                    <td className="py-4 text-slate-400">2G, 3G, 4G, 5G, LTE-M, NB-IoT</td>
+                                </tr>
+                                <tr className="border-b border-white/10">
+                                    <td className="py-4 font-semibold">Temperature Range</td>
+                                    <td className="py-4 text-slate-400">Industrial Grade (-40°C to +105°C) available</td>
+                                </tr>
+                                <tr className="border-b border-white/10">
+                                    <td className="py-4 font-semibold">Coverage</td>
+                                    <td className="py-4 text-slate-400">Global (180+ Countries)</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </section>
+
             </div>
         </main>
     );

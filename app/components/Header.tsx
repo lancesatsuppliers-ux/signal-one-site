@@ -26,11 +26,11 @@ export default function Header() {
 
                     <div className="leading-tight">
                         <Link href="/">
-                            <div className="text-lg md:text-2xl font-semibold tracking-wide cursor-pointer">
-                                SIGNAL <span className="text-[#0EA5E9]">ONE</span>
+                            <div className="text-lg md:text-2xl font-semibold tracking-wide cursor-pointer text-white">
+                                SIGNAL ONE
                             </div>
                         </Link>
-                        <div className="text-[9px] md:text-[11px] uppercase tracking-[0.35em] text-slate-400">
+                        <div className="text-[9px] md:text-[11px] uppercase tracking-[0.35em] text-slate-200">
                             Integrated Systems
                         </div>
                     </div>
@@ -39,7 +39,7 @@ export default function Header() {
                 {/* Mobile Menu Button */}
                 <button
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    className="xl:hidden p-2 rounded-lg hover:bg-white/10 transition"
+                    className="xl:hidden p-2 rounded-lg hover:bg-white/10 transition text-white"
                     aria-label="Toggle menu"
                 >
                     <svg
@@ -57,36 +57,36 @@ export default function Header() {
                 </button>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden xl:flex items-center gap-10 text-sm font-medium">
-                    <Link href="/" className="signal-hover px-3 py-2 rounded-full hover:text-[#0EA5E9] transition">
+                <nav className="hidden xl:flex items-center gap-10 text-sm font-medium text-white">
+                    <Link href="/" className="px-3 py-2 rounded-full hover:opacity-75 transition">
                         Home
                     </Link>
 
-                    <Link href="/systems" className="signal-hover px-3 py-2 rounded-full hover:text-[#0EA5E9] transition">
+                    <Link href="/systems" className="px-3 py-2 rounded-full hover:opacity-75 transition">
                         Systems
                     </Link>
 
-                    <Link href="/solutions" className="signal-hover px-3 py-2 rounded-full hover:text-[#0EA5E9] transition">
+                    <Link href="/solutions" className="px-3 py-2 rounded-full hover:opacity-75 transition">
                         Solutions
                     </Link>
 
-                    <Link href="/platforms" className="signal-hover px-3 py-2 rounded-full hover:text-[#0EA5E9] transition">
+                    <Link href="/platforms" className="px-3 py-2 rounded-full hover:opacity-75 transition">
                         Platforms
                     </Link>
 
-                    <Link href="/devices" className="signal-hover px-3 py-2 rounded-full hover:text-[#0EA5E9] transition">
+                    <Link href="/devices" className="px-3 py-2 rounded-full hover:opacity-75 transition">
                         Devices
                     </Link>
 
-                    <Link href="/connectivity" className="signal-hover px-3 py-2 rounded-full hover:text-[#0EA5E9] transition">
+                    <Link href="/connectivity" className="px-3 py-2 rounded-full hover:opacity-75 transition">
                         Connectivity
                     </Link>
 
-                    <Link href="/partners" className="signal-hover px-3 py-2 rounded-full hover:text-[#0EA5E9] transition">
+                    <Link href="/partners" className="px-3 py-2 rounded-full hover:opacity-75 transition">
                         Partner With Us
                     </Link>
 
-                    <Link href="/contact" className="signal-hover px-3 py-2 rounded-full hover:text-[#0EA5E9] transition">
+                    <Link href="/contact" className="px-3 py-2 rounded-full hover:opacity-75 transition">
                         Contact
                     </Link>
                 </nav>
@@ -102,15 +102,15 @@ export default function Header() {
                         exit={{ opacity: 0, y: -20 }}
                         className="xl:hidden absolute top-full left-0 right-0 mt-2 mx-4 rounded-2xl bg-white/15 backdrop-blur-xl border border-white/20 shadow-lg"
                     >
-                        <nav className="flex flex-col p-4 gap-2">
-                            <Link href="/" className="px-4 py-3 rounded-lg hover:bg-white/10 hover:text-[#0EA5E9] transition" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-                            <Link href="/systems" className="px-4 py-3 rounded-lg hover:bg-white/10 hover:text-[#0EA5E9] transition" onClick={() => setMobileMenuOpen(false)}>Systems</Link>
-                            <Link href="/solutions" className="px-4 py-3 rounded-lg hover:bg-white/10 hover:text-[#0EA5E9] transition" onClick={() => setMobileMenuOpen(false)}>Solutions</Link>
-                            <Link href="/platforms" className="px-4 py-3 rounded-lg hover:bg-white/10 hover:text-[#0EA5E9] transition" onClick={() => setMobileMenuOpen(false)}>Platforms</Link>
-                            <Link href="/devices" className="px-4 py-3 rounded-lg hover:bg-white/10 hover:text-[#0EA5E9] transition" onClick={() => setMobileMenuOpen(false)}>Devices</Link>
-                            <Link href="/connectivity" className="px-4 py-3 rounded-lg hover:bg-white/10 hover:text-[#0EA5E9] transition" onClick={() => setMobileMenuOpen(false)}>Connectivity</Link>
-                            <Link href="/partners" className="px-4 py-3 rounded-lg hover:bg-white/10 hover:text-[#0EA5E9] transition" onClick={() => setMobileMenuOpen(false)}>Partner With Us</Link>
-                            <Link href="/contact" className="px-4 py-3 rounded-lg hover:bg-white/10 hover:text-[#0EA5E9] transition" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+                        <nav className="flex flex-col p-4 gap-2 text-white">
+                            <Link href="/" className="px-4 py-3 rounded-lg hover:bg-white/10 transition" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+                            <Link href="/systems" className="px-4 py-3 rounded-lg hover:bg-white/10 transition" onClick={() => setMobileMenuOpen(false)}>Systems</Link>
+                            <Link href="/solutions" className="px-4 py-3 rounded-lg hover:bg-white/10 transition" onClick={() => setMobileMenuOpen(false)}>Solutions</Link>
+                            <Link href="/platforms" className="px-4 py-3 rounded-lg hover:bg-white/10 transition" onClick={() => setMobileMenuOpen(false)}>Platforms</Link>
+                            <Link href="/devices" className="px-4 py-3 rounded-lg hover:bg-white/10 transition" onClick={() => setMobileMenuOpen(false)}>Devices</Link>
+                            <Link href="/connectivity" className="px-4 py-3 rounded-lg hover:bg-white/10 transition" onClick={() => setMobileMenuOpen(false)}>Connectivity</Link>
+                            <Link href="/partners" className="px-4 py-3 rounded-lg hover:bg-white/10 transition" onClick={() => setMobileMenuOpen(false)}>Partner With Us</Link>
+                            <Link href="/contact" className="px-4 py-3 rounded-lg hover:bg-white/10 transition" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
                         </nav>
                     </motion.div>
                 )}
