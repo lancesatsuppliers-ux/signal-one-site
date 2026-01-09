@@ -1,8 +1,18 @@
+import Image from "next/image";
+
 export default function PoCRadiosPage() {
     return (
         <main className="min-h-screen bg-[#151A21] text-slate-100 px-6 py-32">
             <div className="max-w-7xl mx-auto">
-                {/* IMAGE PLACEHOLDER: PoC Device Hero | 16:9 | devices/poc/hero-radios.jpg */}
+                <div className="relative w-full h-[300px] md:h-[400px] rounded-3xl overflow-hidden mb-16 border border-white/10">
+                    <Image
+                        src="/images/devices/poc/hero-radios.jpg"
+                        alt="PoC Radios"
+                        fill
+                        className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#151A21] via-transparent to-transparent opacity-80" />
+                </div>
                 <h1 className="text-5xl font-semibold mb-6">Push-to-Talk (PoC) Devices</h1>
                 <p className="text-white/70 text-lg max-w-3xl mb-16">
                     Enterprise-grade PoC radios combining the instant communication of two-way radio with the global reach of cellular networks. Built for security, logistics, and field operations.
@@ -12,9 +22,13 @@ export default function PoCRadiosPage() {
 
                     {/* D11 */}
                     <article className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition">
-                        <div className="h-64 bg-black/20 flex items-center justify-center">
-                            {/* IMAGE PLACEHOLDER: D11 Radio Front View | 1:1 | devices/poc/D11.jpg */}
-                            <span className="text-white/20 font-mono">D11 Visual Placeholder</span>
+                        <div className="h-64 bg-black/20 relative">
+                            <Image
+                                src="/images/devices/poc/D11.jpg"
+                                alt="D11 Radio"
+                                fill
+                                className="object-contain p-8 hover:scale-105 transition duration-500"
+                            />
                         </div>
                         <div className="p-8">
                             <div className="flex justify-between items-start mb-4">
@@ -45,9 +59,13 @@ export default function PoCRadiosPage() {
 
                     {/* D12 */}
                     <article className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition">
-                        <div className="h-64 bg-black/20 flex items-center justify-center">
-                            {/* IMAGE PLACEHOLDER: D12 Radio Front View | 1:1 | devices/poc/D12.jpg */}
-                            <span className="text-white/20 font-mono">D12 Visual Placeholder</span>
+                        <div className="h-64 bg-black/20 relative">
+                            <Image
+                                src="/images/devices/poc/D12.jpg"
+                                alt="D12 Radio"
+                                fill
+                                className="object-contain p-8 hover:scale-105 transition duration-500"
+                            />
                         </div>
                         <div className="p-8">
                             <div className="flex justify-between items-start mb-4">
@@ -78,9 +96,13 @@ export default function PoCRadiosPage() {
 
                     {/* D21 */}
                     <article className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition">
-                        <div className="h-64 bg-black/20 flex items-center justify-center">
-                            {/* IMAGE PLACEHOLDER: D21 Radio Front View | 1:1 | devices/poc/D21.jpg */}
-                            <span className="text-white/20 font-mono">D21 Visual Placeholder</span>
+                        <div className="h-64 bg-black/20 relative">
+                            <Image
+                                src="/images/devices/poc/D21.jpg"
+                                alt="D21 Radio"
+                                fill
+                                className="object-contain p-8 hover:scale-105 transition duration-500"
+                            />
                         </div>
                         <div className="p-8">
                             <div className="flex justify-between items-start mb-4">
@@ -111,9 +133,13 @@ export default function PoCRadiosPage() {
 
                     {/* D22 */}
                     <article className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition">
-                        <div className="h-64 bg-black/20 flex items-center justify-center">
-                            {/* IMAGE PLACEHOLDER: D22 Radio Front View | 1:1 | devices/poc/D22.jpg */}
-                            <span className="text-white/20 font-mono">D22 Visual Placeholder</span>
+                        <div className="h-64 bg-black/20 relative">
+                            <Image
+                                src="/images/devices/poc/D22.jpg"
+                                alt="D22 Radio"
+                                fill
+                                className="object-contain p-8 hover:scale-105 transition duration-500"
+                            />
                         </div>
                         <div className="p-8">
                             <div className="flex justify-between items-start mb-4">
