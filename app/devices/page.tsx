@@ -14,12 +14,14 @@ export default function DevicesPage() {
                 <div className="grid md:grid-cols-2 gap-10 mb-20">
                     <Link href="/devices/lorawan-sensors" className="group relative overflow-hidden rounded-3xl bg-white/5 border border-white/10 hover:border-[#0EA5E9]/50 transition-all duration-300">
                         <div className="h-64 bg-black/20 relative">
-                            <Image
-                                src="/devices/lorawan-sensors/hero-sensors.jpg"
-                                alt="LoRaWAN Sensors"
-                                fill
-                                className="object-cover opacity-80 group-hover:opacity-100 transition duration-500"
-                            />
+                           <Image
+  src="/devices/lorawan-sensors/hero-sensors.jpg"
+  alt="LoRaWAN Sensors"
+  width={1200}
+  height={600}
+  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500"
+/>
+
                         </div>
                         <div className="p-8">
                             <h2 className="text-3xl font-semibold text-white mb-4 group-hover:text-[#0EA5E9] transition">LoRaWAN Sensors</h2>
@@ -33,13 +35,16 @@ export default function DevicesPage() {
                     </Link>
 
                     <Link href="/devices/poc-radios" className="group relative overflow-hidden rounded-3xl bg-white/5 border border-white/10 hover:border-[#0EA5E9]/50 transition-all duration-300">
-                        <div className="h-64 bg-black/20 relative">
+                        <div className="h-64 bg-black/20 overflow-hidden">
+
                             <Image
-                                src="/devices/poc/hero-radios.jpg"
-                                alt="PoC Radios"
-                                fill
-                                className="object-cover opacity-80 group-hover:opacity-100 transition duration-500"
-                            />
+  src="/devices/poc/hero-radios.jpg"
+  alt="PoC Radios"
+  width={1200}
+  height={600}
+  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500"
+/>
+
                         </div>
                         <div className="p-8">
                             <h2 className="text-3xl font-semibold text-white mb-4 group-hover:text-[#0EA5E9] transition">PoC Radios</h2>
