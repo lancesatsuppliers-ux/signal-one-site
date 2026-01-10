@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { products } from "../data/products";
+
 
 export default function DevicesPage() {
     return (
@@ -35,7 +35,7 @@ export default function DevicesPage() {
                     <Link href="/devices/poc-radios" className="group relative overflow-hidden rounded-3xl bg-white/5 border border-white/10 hover:border-[#0EA5E9]/50 transition-all duration-300">
                         <div className="h-64 bg-black/20 relative">
                             <Image
-                                src="/images/devices/poc/hero-radios.jpg"
+                                src="/devices/poc/hero-radios.jpg"
                                 alt="PoC Radios"
                                 fill
                                 className="object-cover opacity-80 group-hover:opacity-100 transition duration-500"
