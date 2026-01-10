@@ -15,7 +15,7 @@ export default function DevicesPage() {
                     <Link href="/devices/lorawan-sensors" className="group relative overflow-hidden rounded-3xl bg-white/5 border border-white/10 hover:border-[#0EA5E9]/50 transition-all duration-300">
                         <div className="h-64 bg-black/20 relative">
                             <Image
-                                src="/images/devices/lorawan/hero-sensors.jpg"
+                                src="/devices/lorawan-sensors/hero-sensors.jpg"
                                 alt="LoRaWAN Sensors"
                                 fill
                                 className="object-cover opacity-80 group-hover:opacity-100 transition duration-500"

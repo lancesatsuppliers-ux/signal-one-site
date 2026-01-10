@@ -5,10 +5,12 @@ export default function LoRaWANSensorsPage() {
         <main className="min-h-screen bg-[#151A21] text-slate-100 px-6 py-32">
             <div className="max-w-7xl mx-auto">
                 <div className="relative w-full h-[300px] md:h-[400px] rounded-3xl overflow-hidden mb-16 border border-white/10">
-                    <img
-                        src="/images/devices/lorawan/hero-sensors.jpg"
+                    <Image
+                        src="/devices/lorawan-sensors/hero-sensors.jpg"
                         alt="LoRaWAN Sensors"
+                        fill
                         className="w-full h-full object-cover"
+                        priority
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#151A21] via-transparent to-transparent opacity-80" />
                 </div>
@@ -64,7 +66,7 @@ export default function LoRaWANSensorsPage() {
                                 <span className="text-xs font-mono text-[#0EA5E9] block mb-2">{item.model}</span>
                                 <div className="aspect-square w-full mb-4 bg-black/20 rounded-lg overflow-hidden relative p-4">
                                     <Image
-                                        src={`/images/devices/lorawan/${item.model}.jpg`}
+                                        src={`/devices/lorawan-sensors/${item.model}.jpg`}
                                         alt={item.name}
                                         fill
                                         className="object-contain p-4 opacity-80 group-hover:opacity-100 transition duration-500"
